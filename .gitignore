@@ -19,3 +19,6 @@ venv/
 
 # Tableau workbooks locales (no comiteamos versiones intermedias)
 *.twbx.bak
+
+# Contexto operativo interno (no publicar)
+CLAUDE.md
