@@ -1,1 +1,27 @@
+# Datasets (mantener fuera del repo, referenciar fuente en README)
+data/*.csv
+data/*.xlsx
+data/*.parquet
+data/*.json
 
+# Python
+*.pyc
+__pycache__/
+.ipynb_checkpoints/
+*.egg-info/
+.venv/
+venv/
+
+# Sistema
+.DS_Store
+.env
+*.log
+
+# Tableau workbooks locales (no comiteamos versiones intermedias)
+*.twbx.bak
+
+# Contexto operativo interno (no publicar)
+CLAUDE.md
+
+# Claude Code session files (locales, no publicar)
+.claude/
