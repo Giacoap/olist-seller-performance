@@ -1,18 +1,14 @@
 import pandas as pd
 
-files = {
-    "export/seller_metrics.csv": ["avg_review_score","negative_review_rate",
-                                   "on_time_rate","avg_delay_days",
-                                   "avg_dispatch_days","gmv","avg_freight_ratio"],
-    "export/category_metrics.csv": ["avg_review_score","late_rate","avg_freight_ratio"],
-    "export/state_metrics.csv": ["median_review_score","median_on_time_rate",
-                                  "median_freight_ratio","median_dispatch_days",
-                                  "total_gmv","pct_top"]
-}
+files = [
+    "export/seller_metrics.csv",
+    "export/category_metrics.csv",
+    "export/state_metrics.csv"
+]
 
-for filepath, decimal_cols in files.items():
-    df = pd.read_csv(filepath, encoding="utf-8-sig")
-    df.to_csv(filepath, index=False, encoding="utf-8-sig", decimal=",")
-    print(f"Converted: {filepath}")
+for filepath in files:
+    df = pd.read_csv(filepath, encoding="utf-8-sig", decimal=",")
+    df.to_csv(filepath, index=False, encoding="utf-8-sig", sep=";", decimal=",")
+    print(f"Converted: {filepath} ({len(df)} rows, {len(df.columns)} cols)")
 
 print("Done.")
